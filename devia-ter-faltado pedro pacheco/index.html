@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛠️ Controle de Estoque de Ferramentas Manuais</h1>
+        <p>Registro preciso e alertas de nível baixo para uma gestão eficiente.</p>
+    </header>
+
+    <main>
+        <section class="cadastro">
+            <h2>➕ Cadastro de Novo Item</h2>
+            <form id="cadastro-form">
+                <div class="form-group">
+                    <label for="nome">Nome/Descrição (Ex: Martelo de Unha 1kg)</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modelo">
+                </div>
+
+                <div class="form-group">
+                    <label for="caracteristicas">Características Específicas (Material, Tamanho, Tensão, etc.)</label>
+                    <textarea id="caracteristicas" rows="2" placeholder="Ex: Perfil Reto com Cabo Tubular; Tensão Elétrica 127V"></textarea>
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="quantidade">Quantidade Inicial</label>
+                    <input type="number" id="quantidade" min="0" value="0" required>
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="limite-alerta">Limite Mínimo para Alerta</label>
+                    <input type="number" id="limite-alerta" min="1" value="5" required>
+                </div>
+
+                <button type="submit">Registrar Ferramenta</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section class="estoque">
+            <h2>📦 Estoque Atual</h2>
+            <div id="alerta-estoque">
+                <h3>🔔 Alertas de Nível Baixo</h3>
+                <ul id="lista-alertas">
+                    <li>Nenhum alerta de estoque baixo no momento.</li>
+                </ul>
+            </div>
+
+            <h3>Inventário Completo</h3>
+            <table id="tabela-estoque">
+                <thead>
+                    <tr>
+                        <th>Nome / Descrição</th>
+                        <th>Marca / Modelo</th>
+                        <th>Características</th>
+                        <th>Qtde. Atual</th>
+                        <th>Alerta (Min.)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
