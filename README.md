@@ -1,1 +1,1 @@
-# devia-ter-faltado
+# Sistema de controle de estoque
